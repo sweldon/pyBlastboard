@@ -6,6 +6,7 @@ from PyQt5.QtGui import QPalette, QBrush, QImage, QPixmap
 from main import MainWindow
 import requests
 import json
+import configparser
 
 class Login(QMainWindow):
 
@@ -26,13 +27,17 @@ class Login(QMainWindow):
         self.submit_login.clicked.connect(self.login)
         self.error_label.setAlignment(Qt.AlignCenter)
         self.error_label.hide()
-        self.api_endpoint = "http://ec2-18-210-177-61.compute-1.amazonaws.com:5555"
+        config = configparser.ConfigParser()
+        config.read('config.ini')
+        api_endpoint = config["API_SERVER"]["address"]
         
         # Check servers
-        print self.servers_up
         if not self.servers_up:
             self.error_label.setText('Can\'t connect to the Blastboard servers.')
-            self.error_label.show()   
+            self.error_label.show()  
+            self.user_field.setDisabled(True)
+            self.pass_field.setDisabled(True)
+            self.submit_login.setDisabled(True)
 
     @pyqtSlot()
     def min_window(self):
@@ -63,7 +68,6 @@ class Login(QMainWindow):
                 self.error_label.setText('Incorrect username or password')
                 self.error_label.show()
             else:
-                print 'Something went wrong. Try again.'
                 self.error_label.show()
         else:
             self.error_label.setText('Please try again.')
@@ -79,7 +83,11 @@ app.processEvents()
 servers_up = True
 
 try:
-    api_request = requests.head(self.api_endpoint, timeout=10)
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    api_endpoint = config["API_SERVER"]["address"]
+    print(type(api_endpoint))
+    api_request = requests.head(api_endpoint, timeout=10)
 except:
     servers_up = False
 
