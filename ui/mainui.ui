@@ -6,36 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>350</width>
-    <height>400</height>
+    <width>1250</width>
+    <height>730</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>350</width>
-    <height>400</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>350</width>
-    <height>400</height>
-   </size>
-  </property>
   <property name="windowTitle">
-   <string/>
+   <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton:hover{color:#ffffff;}QPushButton{color:#cccccc;background-color:Transparent;}</string>
-  </property>
-  <property name="animated">
-   <bool>false</bool>
-  </property>
-  <property name="documentMode">
-   <bool>false</bool>
-  </property>
-  <property name="tabShape">
-   <enum>QTabWidget::Rounded</enum>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="DraggableToolbar" name="toolbar" native="true">
@@ -43,15 +22,15 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>361</width>
+      <width>1251</width>
       <height>51</height>
      </rect>
     </property>
     <widget class="QPushButton" name="close_button">
      <property name="geometry">
       <rect>
-       <x>325</x>
-       <y>0</y>
+       <x>1225</x>
+       <y>3</y>
        <width>21</width>
        <height>24</height>
       </rect>
@@ -77,8 +56,8 @@
     <widget class="QPushButton" name="min_button">
      <property name="geometry">
       <rect>
-       <x>307</x>
-       <y>-2</y>
+       <x>1208</x>
+       <y>1</y>
        <width>21</width>
        <height>24</height>
       </rect>
@@ -104,65 +83,115 @@
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel:hover{color:#ffffff;}QLabel{color:#7e7e7e;}</string>
+     </property>
+     <property name="text">
+      <string>Blastboard</string>
+     </property>
+    </widget>
     <zorder>min_button</zorder>
     <zorder>close_button</zorder>
+    <zorder>label_4</zorder>
    </widget>
-   <widget class="QLineEdit" name="user_field">
+   <widget class="QTextBrowser" name="chatDialog">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>270</y>
-      <width>270</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background: none; background-color: #ffffff;font-size:18pt; border-radius:2px; font-family:'Arial'; </string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="pass_field">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>310</y>
-      <width>270</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background: none; background-color: #ffffff; font-size:18pt; border-radius:2px; font-family:'Arial';</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="submit_login">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>350</y>
-      <width>118</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{background: none; background-color:#98B2BD; height: 5px; color: #ffffff; font-size:16pt; font-family:'Arial'; border-radius:2px;} QPushButton:hover{background-color:#798e97;}</string>
-    </property>
-    <property name="text">
-     <string>Login</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="error_label">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
+      <x>907</x>
       <y>240</y>
-      <width>351</width>
-      <height>20</height>
+      <width>333</width>
+      <height>411</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:red;color:white;</string>
+     <string notr="true">background-color:#2f3030;border:none;padding:5px;</string>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhMultiLine</set>
+    </property>
+    <property name="openExternalLinks">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sendMsgBtn">
+    <property name="geometry">
+     <rect>
+      <x>1179</x>
+      <y>654</y>
+      <width>61</width>
+      <height>68</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#sendMsgBtn{background-color:#2f3030;border:none;color:#6996AD;}
+#sendMsgBtn:hover{
+color:#d2dfe6;
+}
+</string>
     </property>
     <property name="text">
-     <string/>
+     <string>Send</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="messageDraft">
+    <property name="geometry">
+     <rect>
+      <x>907</x>
+      <y>654</y>
+      <width>269</width>
+      <height>68</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#2f3030;border:1px solid #4b4c4c;</string>
+    </property>
+    <property name="html">
+     <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>906</x>
+      <y>212</y>
+      <width>86</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:#6996AD;</string>
+    </property>
+    <property name="text">
+     <string>Blastchat</string>
     </property>
    </widget>
   </widget>
@@ -175,8 +204,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
